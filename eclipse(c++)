@@ -1,0 +1,6 @@
+mkdir temp
+cd Downloads/
+ls eclipse*
+tar -xvf eclipse* -C -/temp/
+cd ~/temp/eclipse-installer/
+sudo ./eclipse-inst
