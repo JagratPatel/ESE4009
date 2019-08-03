@@ -1,48 +1,51 @@
-//Pixy Robot
+#include <iostream.h>
+#include <stdlib.h>
+#include <Pixy2.h>
 
-#include <SPI.h>  
-#include <Pixy.h>
 
-Pixy pixy;
+using namespace std;
+
+Pixy2BBB pixy;
+
 
 int signature = 0;
 int x = 0;                      //positon x axis
 int y = 0;                      //position y axis
 unsigned int width = 0;         //object's width
 unsigned int height = 0;        //object's height
-unsigned int area = 0;
-unsigned int newarea = 0;
+unsigned int area = 0;	        //object's area
+unsigned int newarea = 0;	      //object's newarea
 int Xmin = 70;                  //min x position
-int Xmax = 200;                 //max x position
-int maxArea = 0;
-int minArea = 0;
+int Xmax = 319;	                //max x position
+int maxArea = 0;	              //max area
+int minArea = 0;	              //min area
 static int i = 0;
+
+
 
 void loop()
 { 
   while(millis()<5000)
   {
     scan();
-    area = width * height; //calculate the object area 
+    area = width * height;      //calculate the object area 
     maxArea = area + 1000;
     minArea = area - 1000;
-  }
+  } 
 
-    scan(); 
-
-  if(signature == 1)//looking for signature 1
+  if(signature == 1 )           //looking for signature objects from 0 to 7
   {
-    newarea = width * height; //calculate the object area
+    newarea = width * height;   //calculate the object area
     
-      if (x < Xmin)//turn left if x position < max x position
+      if (x < Xmin)             //turn left if x position < max x position
       {     
        std::cout << "Turn Left" << std::endl;
       }
-      else if (x > Xmax) //turn right if x position > max x position
+      else if (x > Xmax)        //turn right if x position > max x position
       {
        std::cout << "Turn Right" << std::endl;
       }
-      else if(newarea < minArea)//go forward if object too small
+      else if(newarea < minArea) //go forward if object too small
       {
        std::cout << "Go Forward" << std::endl; 
       }
@@ -50,8 +53,7 @@ void loop()
       {
        std::cout << "Go Backward" << std::endl; 
       }
-      
-      //else stop
+                                //else stop
       else
       {
         Stop(); 
@@ -63,13 +65,15 @@ void loop()
      }
 }
 
+
 void scan()
   {
   uint16_t blocks;
-  blocks = pixy.getBlocks();  //receive data from pixy 
-  signature = pixy.blocks[i].signature;    //get object's signature
-  x = pixy.blocks[i].x;                    //get x position
-  y = pixy.blocks[i].y;                    //get y position
-  width = pixy.blocks[i].width;            //get width
-  height = pixy.blocks[i].height;          //get height
-  }     
+  blocks = pixy.ccc.getBlocks();  //receive data from pixy 
+  signature = pixy.ccc.blocks[i].signature;    //get object's signature
+  x = pixy.ccc.blocks[i].x;                    //get x position
+  y = pixy.ccc.blocks[i].y;                    //get y position
+  width = pixy.ccc.blocks[i].width;            //get width
+  height = pixy.ccc.blocks[i].height;          //get height
+
+  }
