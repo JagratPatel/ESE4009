@@ -39,19 +39,19 @@ void loop()
     
       if (x < Xmin)             //turn left if x position < max x position
       {     
-       std::cout << "Turn Left" << std::endl;
+       cout << "Turn Left";
       }
       else if (x > Xmax)        //turn right if x position > max x position
       {
-       std::cout << "Turn Right" << std::endl;
+       cout << "Turn Right";
       }
       else if(newarea < minArea) //go forward if object too small
       {
-       std::cout << "Go Forward" << std::endl; 
+       cout << "Go Forward"; 
       }
       else if(newarea > maxArea)//go backward if object too big
       {
-       std::cout << "Go Backward" << std::endl; 
+       cout << "Go Backward"; 
       }
                                 //else stop
       else
