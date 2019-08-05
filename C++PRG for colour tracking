@@ -1,3 +1,4 @@
+//
 #include <iostream>
 #include "opencv2/highgui/highgui.hpp"
 #include "opencv2/imgproc/imgproc.
@@ -74,7 +75,6 @@ using namespace std;
    imshow("Thresholded Image", imgThresholded); //show the thresholded image
 
  
-
   imshow("Original", imgOriginal); //show the original image
 
         if (waitKey(30) == 27) //wait for 'esc' key press for 30ms. If 'esc' key is pressed, break loop
@@ -85,5 +85,4 @@ using namespace std;
     }
 
    return 0;
-
 }
