@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <Pixy2.h>
 
-
 using namespace std;
 
 Pixy2BBB pixy;
@@ -33,7 +32,7 @@ void loop()
     minArea = area - 1000;
   } 
 
-  if(signature == 1 )           //looking for signature objects from 0 to 7
+  if(signature == 1 )           //looking for signature objects 1
   {
     newarea = width * height;   //calculate the object area
     
