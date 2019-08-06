@@ -3,7 +3,6 @@
 #include <Pixy2.h>
 
 using namespace std;
-
 Pixy2BBB pixy;
 
 int signature = 0;
