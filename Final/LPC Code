@@ -1,4 +1,4 @@
-/*LPC Program For Motor Run*/
+/*LPC Program For Motor Run */
 
 #include "fsl_debug_console.h"
 #include "board.h"
