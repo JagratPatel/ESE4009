@@ -1,6 +1,5 @@
 /*LPC Program For Motor Run */
 
-
 #include "fsl_debug_console.h"
 #include "board.h"
 #include "fsl_sctimer.h"
@@ -23,7 +22,6 @@
 #define left_motor_dir_PIN 19U
 #define right_motor_speed_PIN 20U
 #define right_motor_dir_PIN 21U
-
 
 
 
