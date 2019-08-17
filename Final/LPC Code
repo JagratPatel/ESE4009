@@ -9,7 +9,7 @@
 #include <stdbool.h>
 
 /*******************************************************************************
- * Definitions
+ * Definitions 
  ******************************************************************************/
 
 #define SCTIMER_CLK_FREQ CLOCK_GetFreq(kCLOCK_BusClk)
